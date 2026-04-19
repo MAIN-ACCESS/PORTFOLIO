@@ -55,7 +55,7 @@ app.use((req, res, next) => {
   next();
 });
 
-/* Server */
+/* Routes */
 (async () => {
   const server = await registerRoutes(app);
 
@@ -68,7 +68,7 @@ app.use((req, res, next) => {
 
   const port = Number(process.env.PORT) || 5000;
 
-  server.listen(port, () => {
+  server.listen(port, "0.0.0.0", () => {
     console.log(`Server running on port ${port}`);
   });
 })();
